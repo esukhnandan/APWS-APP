@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "580966690475",
+    "firebase_url": "https://awps-8ae0b-default-rtdb.firebaseio.com",
+    "project_id": "awps-8ae0b",
+    "storage_bucket": "awps-8ae0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580966690475:android:bb092c369e5f23f9fdd1ee",
+        "android_client_info": {
+          "package_name": "com.example.myapplicationtest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARGfidspVpMwra150l4UqhAYHUO6oFh-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

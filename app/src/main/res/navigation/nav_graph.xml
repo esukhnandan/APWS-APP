@@ -10,7 +10,24 @@
         android:name="com.example.myapplicationtest.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_FirstFragment_to_PlantFragment"
+            app:destination="@id/PlantFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/PlantFragment"
+        android:name="com.example.myapplicationtest.BlankFragment"
+        android:label="manage_plants_list"
+        tools:layout="@layout/manage_plants_list" >
+        <action
+            android:id="@+id/action_PlantFragment_to_add_plant_page"
+            app:destination="@id/add_plant_page" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_plant_page"
+        android:name="com.example.myapplicationtest.add_plant_page"
+        android:label="fragment_add_plant_page"
+        tools:layout="@layout/fragment_add_plant_page" />
     <!--
         <fragment
             android:id="@+id/FirstFragment"

@@ -16,4 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
+
+    <include layout="@layout/button_bar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
