@@ -55,4 +55,7 @@ dependencies {
 
     implementation("com.orhanobut:dialogplus:1.11@aar")
 
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+
 }

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_PlantFragment"
             app:destination="@id/PlantFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_waterFragment"
+            app:destination="@id/waterFragment" />
     </fragment>
     <fragment
         android:id="@+id/PlantFragment"
@@ -28,6 +31,11 @@
         android:name="com.example.myapplicationtest.add_plant_page"
         android:label="fragment_add_plant_page"
         tools:layout="@layout/fragment_add_plant_page" />
+    <fragment
+        android:id="@+id/waterFragment"
+        android:name="com.example.myapplicationtest.WaterFragment"
+        android:label="fragment_water"
+        tools:layout="@layout/fragment_water" />
     <!--
         <fragment
             android:id="@+id/FirstFragment"

@@ -41,6 +41,13 @@ public class FirstFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_FirstFragment_to_PlantFragment);
             }
         });
+        Button button3 = view.findViewById(R.id.manage_water);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_FirstFragment_to_waterFragment);
+            }
+        });
     }
 
 
