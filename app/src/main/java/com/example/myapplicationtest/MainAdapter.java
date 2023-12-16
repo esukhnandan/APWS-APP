@@ -122,6 +122,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainUserPlants,MainAdap
             }
         });
 
+        //testing new delete
         holder.btnDelete.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -141,6 +142,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainUserPlants,MainAdap
                                         @Override
                                         public void onSuccess(Void unused) {
                                             Toast.makeText(holder.name.getContext(), "Deleted Successfully", Toast.LENGTH_SHORT).show();
+                                            notifyDataSetChanged();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
@@ -152,6 +154,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainUserPlants,MainAdap
                         }
                     }
                 });
+
 
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override

@@ -190,8 +190,8 @@ public class AddActivity2 extends AppCompatActivity {
                 new FirebaseRecyclerOptions.Builder<MainApiPlants>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("PlantApi")
                                 .orderByChild("comname")
-                                .startAt(query)
-                                .endAt(query + "~"), MainApiPlants.class)
+                                .startAt(query.toLowerCase())
+                                .endAt(query.toLowerCase() + "~"), MainApiPlants.class)
                         .build();
 
         mainAdapter2 = new MainApiAdapter(options);

@@ -76,10 +76,17 @@ public class MainApiAdapter extends FirebaseRecyclerAdapter<MainApiPlants,MainAp
         holder2.btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                newselectedComName = "";
+                newselectedSciName = "";
+                newselectedSymbol = "";
+                newselectedWaterUsage = "";
+
                 newselectedComName = model2.getComname();
                 newselectedSciName = model2.getSciname();
                 newselectedSymbol = model2.getSymbol();
                 newselectedWaterUsage = model2.getWaterusage();
+
+                Toast.makeText(v.getContext(), "Selection registered", Toast.LENGTH_SHORT).show();
             }
         });
 
