@@ -91,10 +91,29 @@ public class WaterFragment extends Fragment {
                     if (key != null && key.toLowerCase().contains("sensor")) {
                         float sensorReading = snapshot.getValue(Float.class);
                         entries.add(new Entry(index, sensorReading));
-                        xAxisLabels.add((index * 10) + "min");
+                        //xAxisLabels.add((index * 10) + "min");
                         index++;
                     }
                 }
+                index--;
+
+                //new
+                while (index >= 0) {
+                    int minutes = index * 10;
+                    if (minutes >= 60) {
+                        int hours = minutes / 60;
+                        int remainingMinutes = minutes % 60;
+                        if (remainingMinutes == 0) {
+                            xAxisLabels.add(hours + "hr");
+                        } else {
+                            xAxisLabels.add(hours + "hr " + remainingMinutes + "min");
+                        }
+                    } else {
+                        xAxisLabels.add(minutes + "min");
+                    }
+                    index--;
+                }
+
 
                 // Update the chart with the retrieved data
                 updateChartWithData(entries, xAxisLabels);
