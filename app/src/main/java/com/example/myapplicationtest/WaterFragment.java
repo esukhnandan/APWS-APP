@@ -128,7 +128,7 @@ public class WaterFragment extends Fragment {
 
     private void updateChartWithData(List<Entry> entries, List<String> xAxisLabels) {
         // Create a LineDataSet from your data
-        LineDataSet dataSet = new LineDataSet(entries, "Moisture Level");
+        LineDataSet dataSet = new LineDataSet(entries, "Moisture Level (Percentage)");
         dataSet.setColors(getResources().getColor(R.color.chart_color)); // Change color as needed
         dataSet.setValueTextSize(14f); // Set the text size for data values
 
