@@ -2,7 +2,24 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyApplicationTest" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryVariant">#000000</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="android:textColor">#000000</item> <!-- Set the text color to black -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Background of App -->
+        <item name="android:windowBackground">@drawable/appbackground</item>
+    </style>
+
+    <style name="MyButtons">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">18dp</item> <!-- Set the font size to 16sp -->
+        <item name="android:backgroundTint">#C0CDB5</item>
+        <!-- Add any other text-related attributes you want -->
+    </style>
+
+    <style name="AlertDialogButtonStyle">
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Theme.MyApplicationTest" parent="Base.Theme.MyApplicationTest" />

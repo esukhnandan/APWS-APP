@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlankFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="466dp"
+        android:layout_marginTop="-1in"
+        android:gravity="center"
+        android:text="@string/hello_blank_fragment"
+        android:textSize="35sp" />
+
+    <Button
+        android:id="@+id/add_new_plants"
+        style="@style/MyButtons"
+        android:layout_width="244dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="-240dp"
+        android:layout_gravity="center"
+        android:text="Add New Plant"
+        tools:visibility="visible" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Add your views or layout elements here -->
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:textSize="25sp"
+            android:text="  My Plants:"
+            android:layout_marginTop="235dp"
+            />
+        <EditText
+            android:id="@+id/search_bar1"
+            android:layout_width="350dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="270dp"
+            android:hint="Search..."
+            android:layout_gravity="center_horizontal"
+            android:backgroundTintMode="src_over"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#F5F5F5"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvp"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scrollbars="vertical"
+            android:scrollbarSize="10dp"
+            android:fadeScrollbars="false"
+            android:layout_below="@id/search_bar1"
+        />
+    </RelativeLayout>
+
+</FrameLayout>

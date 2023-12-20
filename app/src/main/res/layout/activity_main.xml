@@ -15,22 +15,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:visibility="gone"
-        />
+            android:visibility="gone" />
 
     <include
         layout="@layout/content_main"
         android:layout_height="473dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabsettings"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/bettercog2"
-        app:maxImageSize="50dp"/>
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
