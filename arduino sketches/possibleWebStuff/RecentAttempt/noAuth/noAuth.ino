@@ -34,7 +34,7 @@ String path = "/plantdata/sensorReading";
 #define WIFI_PASSWORD "PASSWORD"
 
 /* 2. Define the RTDB URL */
-#define DATABASE_URL "awps-8ae0b-default-rtdb.firebaseio.com" //<databaseName>.firebaseio.com or <databaseName>.<region>.firebasedatabase.app
+#define DATABASE_URL "databaseURL" //<databaseName>.firebaseio.com or <databaseName>.<region>.firebasedatabase.app
 
 /* 3. Define the Firebase Data object */
 FirebaseData fbdo;
