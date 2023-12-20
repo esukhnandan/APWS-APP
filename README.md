@@ -1,5 +1,17 @@
 # APWS-APP
 
+# Download and Install
+- Download the APK file included "APWS.apk" on a physical Android device or Android emulator and open it to be prompted to install.
+
+## Manual Deployment
+- Project opened in Android Studio
+- Sync the necessary dependencies
+- Navigate to Build
+- Then to Build Bundle(s) / APK(s)
+- Select Build APK
+- The APK file will be located under ...app/build/outputs/apk/
+- Download the APK on your Android device or Android emulator of choice
+
 ## Technologies and Packages
 - Development Environment: Android Studio
 - Language: Java
@@ -42,6 +54,3 @@
 
 ## Charting
 - `implementation "com.github.PhilJay:MPAndroidChart:v3.1.0"`
-
-# Download and Install
-Download the APK file included "APWS.apk" on a physical Android device or Android emulator and open it to be prompted to install.
