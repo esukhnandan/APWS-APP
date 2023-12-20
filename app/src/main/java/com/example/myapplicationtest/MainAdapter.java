@@ -133,7 +133,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainUserPlants,MainAdap
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // Get the reference to the Firebase item you want to delete
+                        //Get the reference to the Firebase item
                         String itemId = getRef(position).getKey();
                         if (itemId != null) {
                             FirebaseDatabase.getInstance().getReference().child("UsersPlants").child(itemId)
@@ -164,31 +164,6 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainUserPlants,MainAdap
                 });
                 builder.show();
             }
-            /* old code
-           @Override
-           public void onClick(View v){
-               AlertDialog.Builder builder = new AlertDialog.Builder(holder.name.getContext());
-               builder.setTitle("Are you Sure?");
-               builder.setMessage("Deleted data can't be undone.");
-
-               builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                        FirebaseDatabase.getInstance().getReference().child("students")
-                                .child(getRef(position).getKey()).removeValue();
-                   }
-               });
-
-               builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                       Toast.makeText(holder.name.getContext(),"Canceled",Toast.LENGTH_SHORT).show();
-                   }
-               });
-               builder.show();
-
-           }
-           */
         });
 
     }
@@ -228,71 +203,30 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainUserPlants,MainAdap
             });
         }
 
-        //NEW 3
-        /*
         private void showImagePopup(final Context context, CircleImageView imageView) {
-            // Get the Drawable from the ImageView
+            //Drawable from the ImageView
             Drawable drawable = imageView.getDrawable();
 
-            // Check if the drawable is not null
+            //Check if drawable is not null
             if (drawable != null) {
-                // Create a Dialog for the image viewer
+                //Dialog for the image viewer
                 final Dialog dialog = new Dialog(context);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setCancelable(true);
                 dialog.setCanceledOnTouchOutside(true); // Dismiss the dialog when touched outside
                 dialog.setContentView(R.layout.popup_image_viewer);
 
-                // Set the background of the dialog to transparent
+                //background of the dialog to transparent
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-                // Load the drawable into the ImageView in the popup
-                ImageView popupImageView = dialog.findViewById(R.id.popupImageView);
-
-                // Set the desired size (you can adjust these values)
-                int desiredWidth = 50; // in pixels
-                int desiredHeight = 50; // in pixels
-
-                // Resize the drawable
-                Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-                Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, desiredWidth, desiredHeight, true);
-
-                // Set the resized bitmap to the ImageView
-                popupImageView.setImageBitmap(resizedBitmap);
-
-                // Show the dialog
-                dialog.show();
-            } else {
-                // Handle the case where the drawable is null
-                Toast.makeText(context, "Image not available", Toast.LENGTH_SHORT).show();
-            }
-        }
-        */
-
-        private void showImagePopup(final Context context, CircleImageView imageView) {
-            // Get the Drawable from the ImageView
-            Drawable drawable = imageView.getDrawable();
-
-            // Check if the drawable is not null
-            if (drawable != null) {
-                // Create a Dialog for the image viewer
-                final Dialog dialog = new Dialog(context);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setCancelable(true);
-                dialog.setCanceledOnTouchOutside(true); // Dismiss the dialog when touched outside
-                dialog.setContentView(R.layout.popup_image_viewer);
-
-                // Set the background of the dialog to transparent
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-                // Load the drawable into the ImageView in the popup
+                //drawable into the ImageView in the popup
                 ImageView popupImageView = dialog.findViewById(R.id.popupImageView);
                 popupImageView.setImageDrawable(drawable);
 
-                // Show the dialog
+                //Show dialog
                 dialog.show();
             } else {
-                // Handle the case where the drawable is null
+                //Handle case where the drawable is null
                 Toast.makeText(context, "Image not available", Toast.LENGTH_SHORT).show();
             }
         }

@@ -47,15 +47,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainApiAdapter extends FirebaseRecyclerAdapter<MainApiPlants,MainApiAdapter.myViewHolder> {
 
-    /**
-     * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
-     * {@link FirebaseRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
-
-
-    //new6
     public static String newselectedComName;
     public static String newselectedSciName;
     public static String newselectedSymbol;
@@ -114,47 +105,5 @@ public class MainApiAdapter extends FirebaseRecyclerAdapter<MainApiPlants,MainAp
 
             btnSelect = (Button)itemView.findViewById(R.id.apibtnChoose);
         }
-
-        //NEW 3
-        /*
-        private void showImagePopup(final Context context, CircleImageView imageView) {
-            // Get the Drawable from the ImageView
-            Drawable drawable = imageView.getDrawable();
-
-            // Check if the drawable is not null
-            if (drawable != null) {
-                // Create a Dialog for the image viewer
-                final Dialog dialog = new Dialog(context);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setCancelable(true);
-                dialog.setCanceledOnTouchOutside(true); // Dismiss the dialog when touched outside
-                dialog.setContentView(R.layout.popup_image_viewer);
-
-                // Set the background of the dialog to transparent
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-                // Load the drawable into the ImageView in the popup
-                ImageView popupImageView = dialog.findViewById(R.id.popupImageView);
-
-                // Set the desired size (you can adjust these values)
-                int desiredWidth = 50; // in pixels
-                int desiredHeight = 50; // in pixels
-
-                // Resize the drawable
-                Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-                Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, desiredWidth, desiredHeight, true);
-
-                // Set the resized bitmap to the ImageView
-                popupImageView.setImageBitmap(resizedBitmap);
-
-                // Show the dialog
-                dialog.show();
-            } else {
-                // Handle the case where the drawable is null
-                Toast.makeText(context, "Image not available", Toast.LENGTH_SHORT).show();
-            }
-        }
-        */
-
     }
 }

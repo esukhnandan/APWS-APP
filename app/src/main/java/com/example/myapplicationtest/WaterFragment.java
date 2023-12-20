@@ -31,20 +31,20 @@ public class WaterFragment extends Fragment {
     private LineChart lineChart;
 
     public WaterFragment() {
-        // Required empty public constructor
+        //Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Initialize chart
+        //Initialize chart
         lineChart = new LineChart(requireContext());
         lineChart.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
 
-        // Add the chart to the fragment's layout
+        // dd the chart to the fragment's layout
         View view = getView();
         if (view != null) {
             ((ViewGroup) view).addView(lineChart);
@@ -53,16 +53,16 @@ public class WaterFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        //Inflate the layout for fragment
         View view = inflater.inflate(R.layout.fragment_water, container, false);
 
-        // Initialize chart
+        //Initialize chart
         lineChart = new LineChart(requireContext());
         lineChart.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
 
-        // Add the chart to the fragment's layout
+        //Add the chart to fragment's layout
         ((ViewGroup) view.findViewById(R.id.chartContainer)).addView(lineChart);
 
         return view;
@@ -72,17 +72,17 @@ public class WaterFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        // Reference to the "plantdata" node in Firebase
+        //Reference to the "plantdata" in Firebase
         DatabaseReference plantDataRef = FirebaseDatabase.getInstance().getReference("plantdata");
 
-        // Retrieve data from Firebase and update chart
+        //Retrieve data from Firebase and update chart
         plantDataRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 List<Entry> entries = new ArrayList<>();
                 List<String> xAxisLabels = new ArrayList<>();
 
-                // Iterate through the dataSnapshot and filter entries based on the key
+                //Iterate through the dataSnapshot and filter entries based on the key
                 int index = 0;
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     String key = snapshot.getKey();
@@ -91,13 +91,11 @@ public class WaterFragment extends Fragment {
                     if (key != null && key.toLowerCase().contains("sensor")) {
                         float sensorReading = snapshot.getValue(Float.class);
                         entries.add(new Entry(index, sensorReading));
-                        //xAxisLabels.add((index * 10) + "min");
                         index++;
                     }
                 }
                 index--;
 
-                //new
                 while (index >= 0) {
                     int minutes = index * 10;
                     if (minutes >= 60) {
@@ -115,7 +113,7 @@ public class WaterFragment extends Fragment {
                 }
 
 
-                // Update the chart with the retrieved data
+                //Update chart with retrieved data
                 updateChartWithData(entries, xAxisLabels);
             }
 
@@ -127,40 +125,36 @@ public class WaterFragment extends Fragment {
     }
 
     private void updateChartWithData(List<Entry> entries, List<String> xAxisLabels) {
-        // Create a LineDataSet from your data
+        //LineDataSet from your data
         LineDataSet dataSet = new LineDataSet(entries, "Moisture Level (Percentage)");
         dataSet.setColors(getResources().getColor(R.color.chart_color)); // Change color as needed
         dataSet.setValueTextSize(14f); // Set the text size for data values
 
-        // Create a LineData object with the LineDataSet
+        //LineData object with the LineDataSet
         LineData lineData = new LineData(dataSet);
 
-        // Set the LineData to the chart
+        //Set LineData to the chart
         lineChart.setData(lineData);
 
-        // Customize chart appearance
-        lineChart.getDescription().setTextSize(0f); // Set the text size for the description
+        //chart appearance
+        lineChart.getDescription().setTextSize(0f);
         lineChart.getDescription().setText("");
         lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLabels));
         lineChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         lineChart.getXAxis().setGranularity(1f);
 
-        // Set the text size for the X-axis labels
         lineChart.getXAxis().setTextSize(12f);
 
-        // Set the text size for the Y-axis labels
         lineChart.getAxisLeft().setTextSize(12f);
 
-        // Set the text size for the chart legend
         lineChart.getLegend().setTextSize(14f);
 
-        // Set the background color
         lineChart.setBackgroundColor(Color.parseColor("#b8e5ff")); // Change color as needed
 
-        // Animate the chart
+        //Animate the chart
         lineChart.animateY(1000);
 
-        // Refresh the chart
+        //Refresh the chart
         lineChart.invalidate();
     }
 

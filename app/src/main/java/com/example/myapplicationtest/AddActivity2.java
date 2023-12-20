@@ -96,7 +96,7 @@ public class AddActivity2 extends AppCompatActivity {
         searchEditText2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Not needed for this example
+                //not needed
             }
 
             @Override
@@ -107,22 +107,17 @@ public class AddActivity2 extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                // Not needed for this example
+                //not needed
             }
         });
 
     }
-
-    //new5
 
     public void setDataFromAdapter(String comName, String sciName, String Symbol, String waterUsage) {
         selectedComName = comName;
         selectedSciName = sciName;
         selectedSymbol = Symbol;
         selectedWaterUsage = waterUsage;
-
-        // You can use these values as needed (e.g., display in UI elements)
-        // Example: setEditTextValues(selectedComName, selectedSciName, selectedSymbol, selectedWaterUsage);
     }
 
     private void openImagePicker() {
